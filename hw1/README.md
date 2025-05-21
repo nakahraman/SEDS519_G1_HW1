@@ -57,12 +57,12 @@ mvn clean install
 ```bash
 mvn spring-boot:run
 ```
-The app will start on `http://localhost:8080`
+The app will start on `http://localhost:9090`
 
 ### 3. Access Frontend
 You can access the upload interface directly via your browser:
 ```
-http://localhost:8080/upload.html
+http://localhost:9090/upload.html
 ```
 Alternatively, you can open `upload.html` directly from your project at the following path:
 ```
