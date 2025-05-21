@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Course File</title>
+</head>
+<body>
+<h2>Upload Course Schedule (Excel or PDF)</h2>
+<input type="file" id="fileInput" />
+<button onclick="upload()">Upload</button>
+
+<hr>
+<div id="result"></div>
+
+<script>
+        async function upload() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select a file.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("/api/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.text();
+                document.getElementById("result").innerHTML = result;
+            } catch (err) {
+                document.getElementById("result").innerHTML = "An error occurred: " + err;
+            }
+        }
+    </script>
+</body>
+</html>
