@@ -49,7 +49,7 @@ com.seds519.hw1
 ### 1. Clone and Build
 ```bash
 git clone https://github.com/nakahraman/SEDS519_G1_HW1.git
-cd hw1-schedule-uploader
+cd SEDS519_G1_HW1/hw1
 mvn clean install
 ```
 
